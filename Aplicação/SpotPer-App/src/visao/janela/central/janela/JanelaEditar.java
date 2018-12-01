@@ -37,8 +37,8 @@ public class JanelaEditar {
         this.controlador = informacoes.getControlador();
         this.informacoes = informacoes;
         this.nome = nome;
-        tabelaCSV = controlador.dadosCSV();
-        tituloTabela = controlador.titulosColunas();
+        //tabelaCSV = controlador.dadosCSV();
+        //tituloTabela = controlador.titulosColunas();
 
         configuracoesPadrao();
     }
@@ -82,7 +82,7 @@ public class JanelaEditar {
         }
 
 
-        String nomeArquivo = controlador.nomeArquivo.replace("\\", "-");
+        String nomeArquivo = "Nome";
         String[] nomeArquivoArray = nomeArquivo.split("-");
         String tituloCalcular = "Nome do arquivo: "+nomeArquivoArray[nomeArquivoArray.length-1];
 
@@ -151,7 +151,7 @@ public class JanelaEditar {
                 linhaCSVs = "";
                 for (int coluna = 0; coluna < valor.getColumnCount(); coluna++){
                     String elemento = String.valueOf(valor.getValueAt(linha, coluna));
-
+                    /*
                     if (controlador.eColunaNumerica(coluna) && ((elemento.matches("^([+-]?\\d*\\.?\\d*)$") || elemento.equals("NA") || elemento.equals("")))){
                         linhaCSVs = linhaCSVs + valor.getValueAt(linha, coluna);
                         if (coluna < valor.getColumnCount()-1) linhaCSVs += ",";
@@ -169,7 +169,7 @@ public class JanelaEditar {
                         controlador.setControler(controlador.nomeArquivo);
                         throw new EmptyStackException();
                     }
-                }
+                }*/
 
                 lines.add(linhaCSVs);
             }

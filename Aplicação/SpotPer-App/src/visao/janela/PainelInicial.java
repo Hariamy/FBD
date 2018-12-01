@@ -16,10 +16,10 @@ public class PainelInicial extends JPanel {
     public Janela janela;
     private JTextField texto;
     private boolean focoInicial = true;
-    Botao buscar;
+    private Botao buscar;
 
     private JPanel painelSuperior = new JPanel();
-    private JPanel painelInferir = new JPanel();
+    private JPanel painelInferior = new JPanel();
     private JPanel painelTexto = new JPanel();
     private JPanel painelBotao = new JPanel();
 
@@ -32,14 +32,13 @@ public class PainelInicial extends JPanel {
 
     public void configuracoes(){
         //     LAYOUT DA PÁGINA INICIAL     //
-
         Border bordaVazia = BorderFactory.createEmptyBorder(0, 0, 0, 0);
         this.setBorder(bordaVazia);
-        painelInferir.setBorder(bordaVazia);
+        painelInferior.setBorder(bordaVazia);
         painelSuperior.setBorder(bordaVazia);
 
         this.setLayout(new BorderLayout());
-        painelInferir.setLayout(new BorderLayout());
+        painelInferior.setLayout(new BorderLayout());
         painelSuperior.setLayout(new BorderLayout());
 
         try {
@@ -58,52 +57,36 @@ public class PainelInicial extends JPanel {
             painelSuperior.setPreferredSize(new Dimension(900, 450));
         }
 
-
-        //CAIXA DE TEXTO
-        Border bordaTexto = BorderFactory.createEmptyBorder(7, 11, 7, 5);
-        Cursor cursor = new Cursor(Cursor.TEXT_CURSOR);
-        texto = new JTextField("Digite o diretório do arquivo", 35);
-
-        texto.setCursor(cursor);
-        texto.addFocusListener(new TextoOculto());
-        texto.setBorder(bordaTexto);
-        texto.setSize(110, 20);
-        texto.setFont(Fontes.ROBOTO_MENOR);
-
-        this.painelTexto.add(texto, BorderLayout.CENTER);
         this.painelTexto.setBackground(Cores.rosaClaro);
-        painelTexto.setBorder(bordaVazia);
 
         //BOTAO DE PROCURAR ARQUIVO CSV
 
-        buscar = new Botao("BUSCAR");
+        buscar = new Botao("ADMINISTRADOR");
         buscar.setMargin(new Insets(2, 10, 2, 10));
         buscar.configurarFonteCorFundo(Fontes.ROBOTO_BOLD_PEQUENA, Cores.corBotaoAzulEscuro, Cores.corVerde);
         buscar.addActionListener(new BotaoBuscar());
-        buscar.requestFocusInWindow ();
-        painelTexto.setPreferredSize(new Dimension(900, 120));
+        buscar.requestFocusInWindow();
+
 
         this.painelTexto.add(buscar, BorderLayout.NORTH);
-        this.painelInferir.add(painelTexto, "North");
+        this.painelInferior.add(painelTexto, "North");
 
         //BOTAO ANALISAR
-        Botao analisar = new Botao("ANALISAR");
-        analisar.setMargin(new Insets(10, 40, 10, 40));
-        analisar.configurarFonteCorFundo(Fontes.ROBOTO_BOLD_MEDIA, Cores.corBranca, Cores.corBotaoAzulEscuro);
+        Botao analisar = new Botao("USUÁRIO");
+        analisar.setMargin(new Insets(2, 10, 2, 10));
+        analisar.configurarFonteCorFundo(Fontes.ROBOTO_BOLD_PEQUENA, Cores.corBranca, Cores.corBotaoAzulEscuro);
         analisar.addActionListener(new BotaoAnalisar());
 
-
-        painelBotao.setBackground(Cores.rosaClaro);
-        painelBotao.setBorder(bordaVazia);
         painelSuperior.setBackground(Cores.rosaClaro);
+        painelInferior.setBackground(Cores.rosaClaro);
 
-        painelBotao.add(analisar, BorderLayout.CENTER);
+        painelBotao.add(analisar, "Center");
+        //painelBotao.add(tema, "South");
 
-        painelInferir.add(painelBotao, "Center");
-
+        painelInferior.add(painelBotao, "Center");
 
         this.add(painelSuperior, "North");
-        this.add(painelInferir, "Center");
+        this.add(painelInferior, "Center");
         this.setBackground(Cores.rosaClaro);
 
     }
@@ -129,6 +112,29 @@ public class PainelInicial extends JPanel {
                 janela.conteudoJanela(new PainelInformacoes(janela));
                 janela.revalidate();
                 janela.repaint();
+            }
+
+        }
+    }
+
+    public class BotaoTema implements ActionListener {
+        public void actionPerformed(ActionEvent evento) {
+            /*boolean erro;
+            Controlador controlador = new Controlador(texto.getText());
+            erro = controlador.erro();
+
+            if (erro){
+                String mensagem = "";
+                if (texto.getText().equals("") || texto.getText().equals("Digite o diretório do arquivo")) mensagem = "<html>Escolha um arquivo clicando em buscar <br/>ou digite o diretório na caixa de texto</html>";
+                else mensagem = "Não foi possível abrir o arquivo!";
+
+                URL erroIcone = ClassLoader.getSystemResource("imagens/erro.png");
+                Icon iconeErro = new ImageIcon(erroIcone);
+                JOptionPane.showMessageDialog (new JFrame(), mensagem, "Erro", JOptionPane.INFORMATION_MESSAGE, iconeErro);
+
+            } else*/{
+                //janela.setControlador(controlador);
+
             }
 
         }

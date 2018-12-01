@@ -1,8 +1,8 @@
 package visao.janela;
 import controlador.Controlador;
-import visao.janela.central.observer.Editar;
-import visao.janela.central.observer.Numericos;
-import visao.janela.central.observer.Tabelas;
+//import visao.janela.central.observer.Editar;
+//import visao.janela.central.observer.Numericos;
+//import visao.janela.central.observer.Tabelas;
 import visao.layout.Botao;
 import visao.layout.Cores;
 import visao.layout.Fontes;
@@ -67,7 +67,7 @@ public class PainelInformacoes extends JPanel{
 
             Botao voltar = new Botao(botaoVoltar);
             voltar.setContentAreaFilled(false);
-            voltar.addActionListener(new BotaoVoltar());
+            //voltar.addActionListener(new BotaoVoltar());
 
 
             painelSuperior.add(voltar, BorderLayout.WEST);
@@ -80,7 +80,7 @@ public class PainelInformacoes extends JPanel{
 
             Botao voltar = new Botao(botaoVoltar);
             voltar.setContentAreaFilled(false);
-            voltar.addActionListener(new BotaoVoltar());
+            //voltar.addActionListener(new BotaoVoltar());
 
 
             painelSuperior.add(voltar, BorderLayout.WEST);
@@ -91,7 +91,7 @@ public class PainelInformacoes extends JPanel{
 
 
         //   BARRA DOS BOTÕES - //
-
+/*
         Botao media = new Botao("Média");
         media.setMargin(new Insets(0, 40, 0, 40));
         media.configurarFonteCorFundo(Fontes.ROBOTO_MEDIA, Cores.azulEscuro2, Cores.rosaClaro2);
@@ -117,7 +117,6 @@ public class PainelInformacoes extends JPanel{
         mediana.setMargin(new Insets(0, 40,0 , 40));
         mediana.configurarFonteCorFundo(Fontes.ROBOTO_MEDIA, Cores.azulEscuro2, Cores.rosaClaro2);
         mediana.addActionListener(new Numericos(this, "mediana"));
-
 
         Botao minimo = new Botao("Mínimo");
         minimo.setMargin(new Insets(0, 40,0 , 40));
@@ -265,6 +264,7 @@ public class PainelInformacoes extends JPanel{
         this.add(boxCentral, BorderLayout.CENTER);
 
         // this.add(painelInferir, BorderLayout.SOUTH);
+        */
 
     }
 

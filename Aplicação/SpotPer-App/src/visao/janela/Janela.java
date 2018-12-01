@@ -11,7 +11,7 @@ public class Janela extends JFrame{
     private Controlador controlador;
 
     public Janela(){
-        super("Analisador de Dados CSV");
+        super("SpotPer - Tenha suas músicas onde quiser!");
         configuracoesPadrao();
     }
 
