@@ -49,7 +49,7 @@ public class Executar extends Conexao{
         return executou;
     }
 
-    /*
+
     public String inseriTabela(String tabela) {
 
         String criar = "create table " + tabela + "(" +
@@ -59,7 +59,7 @@ public class Executar extends Conexao{
         update(criar);
         return "Vê lá se deu bom";
     }
-
+ /*
     public String inserirTupla(String tabela, int codigo, String nome){
         String criar = "insert into "+ tabela + " values(" +
                 codigo + ", '" + nome + "')";

@@ -11,7 +11,8 @@ public class Janela extends JFrame{
     private Controlador controlador;
 
     public Janela(){
-        super("SpotPer - Tenha suas músicas onde quiser!");
+        super("SpotPer - Suas músicas onde e quando quiser!");
+        this.controlador = new Controlador();
         configuracoesPadrao();
     }
 
@@ -19,7 +20,7 @@ public class Janela extends JFrame{
         this.controlador = controlador;
     }
 
-    Controlador getControlador(){
+    public Controlador getControlador(){
         return this.controlador;
     }
 

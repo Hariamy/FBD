@@ -1,20 +1,20 @@
 package controlador;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
-import modelo.Metricas;
+import modelo.Album;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Controlador {
-
-    Controlador() {
+    ArrayList<Album> albuns = new ArrayList<Album>();
+    public Controlador() {
+        //chama o slq aqui e vou criar uma lista de paranaues
+        for (int i = 0; i < 10; i++) {
+            Album a = new Album("Album da Hariamy " + i, "Besta");
+            albuns.add(a);
+        }
 
     }
+
+    public ArrayList<Album> getAlbuns() { return albuns; }
 }
 
