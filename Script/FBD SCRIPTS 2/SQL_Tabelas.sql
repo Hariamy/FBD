@@ -29,6 +29,7 @@ create table Playlist(
 	Id_playlist int not null,
 	Nome varchar(80) not null,
 	DT_criacao date not null,
+	Tempo_execucao int not null,
 	constraint PK_Id_playlist primary key(Id_playlist)
 ) ON SpotPer_Terciario
 
@@ -158,7 +159,7 @@ create table AlbumFaixaPlaylist( --auxiliar playlist e AlbumFaixa
 	--sem chave primaria
 	Frequencia int,
 	DT_ultima_tocagem date,
-	Tempo_execucao int not null,
+	--Tempo_execucao int not null,
 	Cod_playlist int not null,
 	Cod_album int not null,
 	Cod_faixa int not null,
